@@ -86,7 +86,9 @@ async def handle_media_stream(websocket: WebSocket):
                         stream_sid = data["start"]["streamSid"]
                         logger.info(f"Stream started with SID: {stream_sid}")
             except WebSocketDisconnect:
-                logger.warning("WebSocket disconnected by client.")
+                logger.warning("WebSocket disconnected by client:{e}")
+            except Exception as e:
+                logger.error(f"Error in WebSocket connection: {e}")
                 if openai_ws.open:
                     await openai_ws.close()
 
