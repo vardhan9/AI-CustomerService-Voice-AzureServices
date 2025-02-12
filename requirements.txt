@@ -1,8 +1,5 @@
 azure-search-documents
 azure-identity
-fastapi
-uvicorn
 python-dotenv
 websockets
-twilio
-gunicorn
+audio-recorder-streamlit
